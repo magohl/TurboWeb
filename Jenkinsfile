@@ -10,8 +10,10 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("magohl/turboweb")
+        /* app = docker.build("magohl/turboweb") */
+        withDockerRegistry(url: 'https://docker.corp/', credentialsId: 'docker-creds') {
+        sh 'sh docker build -t magohl/TurboWeb:latest . && docker push magohl/TurboWeb:latest'
+}
     }
 
     stage('Test image') {
