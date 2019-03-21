@@ -17,7 +17,7 @@ node {
 
       script {
         //docker.build "magohl/turboweb" + ":$BUILD_NUMBER"
-         sh "docker build -t "magohl/turboweb" + ":$BUILD_NUMBER" + " ."
+         sh "docker build -t magohl/turboweb" + ":$BUILD_NUMBER" + " ."
       }
     }
 
