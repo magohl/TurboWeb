@@ -12,8 +12,8 @@ node {
          * docker build on the command line */
         /* app = docker.build("magohl/turboweb") */
         
-        sh(script: "docker build -t magohl/TurboWeb:latest .", returnStdout: true)
-        sh(script: "docker push magohl/TurboWeb:latest", returnStdout: true)
+        sh(script: "docker build -t magohl/turboweb:latest .", returnStdout: true)
+        sh(script: "docker push magohl/turboweb:latest", returnStdout: true)
                  
     }
 
