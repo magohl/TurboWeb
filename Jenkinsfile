@@ -18,6 +18,7 @@ node {
       script {
         //docker.build "magohl/turboweb" + ":$BUILD_NUMBER"
          sh "docker build -t magohl/turboweb" + ":$BUILD_NUMBER" + " ."
+         def img = docker.image("magohl/turboweb"+ ":$BUILD_NUMBER" + " .")
       }
     }
 
