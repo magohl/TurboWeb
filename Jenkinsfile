@@ -38,4 +38,3 @@ node {
          sh "docker push magohl/turboweb" + ":$BUILD_NUMBER" + " ."
         }
     }
-}
