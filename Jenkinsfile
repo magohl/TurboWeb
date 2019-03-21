@@ -12,7 +12,9 @@ node {
          * docker build on the command line */
         /* app = docker.build("magohl/turboweb") */
         
-        sh 'sh docker build -t magohl/TurboWeb:latest . && docker push magohl/TurboWeb:latest'
+        sh(script: "docker build -t magohl/TurboWeb:latest .", returnStdout: true)
+        sh(script: "docker push magohl/TurboWeb:latest", returnStdout: true)
+                 
     }
 
     stage('Test image') {
