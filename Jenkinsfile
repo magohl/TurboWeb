@@ -15,15 +15,12 @@ node {
         // sh 'docker build -t magohl/turboweb:latest .'
         // sh 'docker push magohl/turboweb:latest'
 
-         withDockerRegistry() {
-        sh 'docker build -t magohl/turboweb:latest .'
-        sh 'docker push magohl/turboweb:latest'
-       }
+      script {
+        docker.build "magohl/turboweb" + ":$BUILD_NUMBER"
+      }
+
     }
 
-steps {
-  
-}
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
