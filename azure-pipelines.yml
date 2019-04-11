@@ -13,5 +13,6 @@ variables:
   imageName: 'your-container-image-name:$(build.buildId)'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
-  displayName: 'docker build'
+- script: docker build -f Dockerfile -t magohl/$(imageName) .
+- script: docker push magohl/$(imageName)
+  displayName: 'docker build and push'
